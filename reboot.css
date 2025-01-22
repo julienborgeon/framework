@@ -1,0 +1,542 @@
+/* Reboot.css - Base styles for a modern CSS framework */
+/* Draft file - Work in progress */
+
+:root {
+    --fold-color-primary: #3E63DD;
+    --fold-color-code: #E54666;
+    --fold-text-color: var(--fold-gray-120);
+    --fold-text-muted: var(--fold-gray-110);
+    --fold-border-color: var(--fold-gray-050);
+    --fold-body-background: var(--fold-gray-020);
+    --fold-surface-background: var(--fold-gray-030);
+    --fold-button-background: var(--fold-gray-040);
+    --fold-gray-010: #fcfcfc;
+    --fold-gray-020: #F9F9F9;
+    --fold-gray-030: #F0F0F0;
+    --fold-gray-040: #E8E8E8;
+    --fold-gray-050: #E0E0E0;
+    --fold-gray-060: #D9D9D9;
+    --fold-gray-070: #CECECE;
+    --fold-gray-080: #BBBBBB;
+    --fold-gray-090: #8D8D8D;
+    --fold-gray-100: #838383;
+    --fold-gray-110: #646464;
+    --fold-gray-120: #202020;
+    --fold-font-stack-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --fold-gray-010: #111111;
+        --fold-gray-020: #191919;
+        --fold-gray-030: #222222;
+        --fold-gray-040: #2A2A2A;
+        --fold-gray-050: #313131;
+        --fold-gray-060: #3A3A3A;
+        --fold-gray-070: #484848;
+        --fold-gray-080: #606060;
+        --fold-gray-090: #6E6E6E;
+        --fold-gray-100: #7B7B7B;
+        --fold-gray-110: #B4B4B4;
+        --fold-gray-120: #EEEEEE;
+    }
+    img {
+        opacity: .75;
+        transition: opacity .5s ease-in-out;
+    }
+    img:hover {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color-scheme: light dark;
+    font-size: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: var(--fold-font-stack-sans);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: var(--fold-body-background);
+    scrollbar-gutter: stable;
+    color: var(--fold-text-color);
+}
+
+main {
+    display: block;
+}
+
+hr {
+    margin: 1.5rem 0;
+    border: 0;
+    border-top: var(--fold-border-color);
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: clamp(2.027rem, 1.388rem + 2.131vw, 2.986rem);
+}
+
+h2 {
+    font-size: clamp(1.802rem, 1.345rem + 1.524vw, 2.488rem);
+}
+
+h3 {
+    font-size: clamp(1.602rem, 1.287rem + 1.049vw, 2.074rem);
+}
+
+h4 {
+    font-size: clamp(1.424rem, 1.221rem + 0.676vw, 1.728rem);
+}
+
+h5 {
+    font-size: clamp(1.266rem, 1.150rem + 0.387vw, 1.44rem);
+}
+
+h6 {
+    font-size: clamp(1.125rem, 1.075rem + 0.1667vw, 1.2rem);
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p, ul, ol, dl, details, iframe, embed, object, pre, figure, fieldset, progress, textarea, select {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;
+}
+
+a, u, ins {
+    text-underline-offset: .175rem;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+small {
+    font-size: 0.875em;
+}
+
+mark {
+    border-radius: .25rem;
+    padding: 2px 5px;
+}
+
+code, pre, kbd, samp {
+    font-size: 1em;
+    font-family: monospace, monospace;
+}
+
+kbd {
+    cursor: default;
+    font-size: .9em;
+}
+
+code {
+    color: var(--fold-color-code);
+}
+
+pre {
+    border: 1px solid var(--fold-border-color);
+    border-radius: .25rem;
+    padding: 1rem;
+    max-width: 100%;
+    overflow: auto;
+}
+
+pre > code {
+    color: inherit;
+}
+
+kbd {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    border: 1px solid var(--fold-border-color);
+    border-bottom: 2px solid var(--fold-border-color);
+    border-radius: .25rem;
+    padding: .1em .25em;
+    color: inherit;
+}
+
+sub, sup {
+    position: relative;
+    vertical-align: baseline;
+    font-size: 0.75em;
+    line-height: 0;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+abbr[title] {
+    -webkit-text-decoration: underline dotted;
+    -webkit-text-decoration-skip-ink: none;
+    cursor: help;
+    text-decoration: underline dotted;
+    text-decoration-skip-ink: none;
+}
+
+blockquote {
+    margin: 2rem 0 2rem 2rem;
+    border-left: 5px solid var(--fold-gray-060);
+    background-color: var(--fold-gray-030);
+    padding: 1rem;
+    color: inherit;
+    font-style: normal;
+}
+
+img,
+picture,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;  
+}
+
+figure > img, 
+figure > picture > image,
+figure > audio {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+video {
+    width: 100%;
+}
+
+figcaption, table caption {
+    color: var(--fold-text-muted);
+    font-weight: 700;
+    font-size: .875rem;
+    text-align: center;
+}
+
+figure > figcaption,
+figure + figcaption {
+    margin-top: .5rem;
+}
+
+option {
+    padding: 1px 2px 1px 20px;
+}
+
+button, input, optgroup, select, textarea, fieldset {
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+}
+
+button, input, select, textarea, fieldset {
+    vertical-align: middle;
+    border: 1px solid var(--fold-border-color);
+    border-radius: .25rem;
+    padding: .5rem;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    background-color: var(--fold-button-background);
+    color: inherit;
+}
+
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+button:disabled,
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
+    opacity: .75;
+    background-color: var(--fold-gray-030);
+}
+
+:disabled {
+    cursor: not-allowed;
+}
+
+dt {
+    font-weight: 700;
+}
+
+ul, ol, dd {
+    margin-left: 2rem;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+    margin-bottom: 0;
+    margin-left: 1.125rem;
+}
+
+details {
+    display: block;
+    border: 1px solid var(--fold-border-color);
+    border-radius: .25rem;
+    background-color: var(--fold-gray-030);
+}
+
+summary {
+    display: list-item;
+    cursor: pointer;
+    padding: 1rem;
+    word-break: break-all;
+}
+
+details[open] {
+    padding: 1rem;
+}
+
+details[open] > summary {
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+table {
+    margin: 1em 0;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1rem;
+}
+
+th, td {
+    border: 1px solid var(--fold-border-color);
+    padding: .5rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--fold-gray-030);
+}
+
+table caption {
+    margin-bottom: .5rem;
+}
+
+fieldset {
+    padding: 1rem;
+}
+
+legend {
+    display: table;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    max-width: 100%;
+    color: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: normal;
+}
+
+label:not(input + label) {
+    display: block;
+}
+
+input, textarea, select, progress {
+    display: inline-block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: var(--fold-body-background);
+    max-width: 100%;
+    color: inherit;
+}
+
+textarea, select, progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+@media only screen and (max-width: 720px) {
+    input,
+    textarea,
+    select {
+        width: 100%;
+    }
+}
+
+input[type="range"] {
+    padding: 0;
+}
+
+input[type="file"] {
+    border: 0;
+}
+
+input[type="color"] {
+    background: unset;
+    padding: 0.2rem;
+    height: 2.5rem;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+textarea:not([cols]) {
+    width: 100%;
+}
+
+select:not([multiple]) {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5' stroke='%23bbb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    padding-right: 1rem;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    vertical-align: baseline;
+    appearance: none;
+    border: 1px solid var(--fold-border-color);
+    border-radius: 1rem;
+    background-color: var(--fold-surface-background);
+    width: 100%;
+}
+
+progress:indeterminate {
+    background-color: var(--fold-surface-background);
+}
+
+progress::-webkit-progress-bar {
+    border-radius: 1rem;
+    background-color: var(--fold-surface-background);
+}
+
+progress::-webkit-progress-value {
+    border-radius: 1rem;
+    background-color: var(--fold-color-primary);
+}
+
+progress::-moz-progress-bar {
+    transition-duration: 0.3s;
+    transition-property: width;
+    border-radius: 1rem;
+    background-color: var(--fold-color-primary);
+}
+
+progress:indeterminate::-moz-progress-bar {
+    background-color: var(--fold-surface-background);
+}
+
+iframe, embed, object {
+    border: none;
+    border-radius: unset;
+    width: 100%;
+}
+
+dialog {
+    margin: auto;
+    border: 1px solid var(--fold-border-color);
+    border-radius: .25rem;
+    padding: 1rem;
+    max-width: 40rem;
+    color: inherit;
+}
+
+dialog::backdrop {
+    opacity: .8;
+    background-color: var(--fold-body-background);
+}
+
+:focus {
+    outline-color: transparent;
+}
+
+:focus-visible {
+    outline-color: var(--fold-gray-080) ;
+    outline-style: solid;
+}
+
+[hidden] {
+    display: none !important;
+}
